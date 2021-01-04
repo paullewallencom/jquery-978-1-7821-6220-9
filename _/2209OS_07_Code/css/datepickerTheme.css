@@ -1,0 +1,6 @@
+#date { width: 302px; }
+#bookingForm { width: 503px; }
+#bookingForm h2 { margin-left: 20px; }
+#bookingForm .ui-widget-content { padding: 20px 0; border-top: none; }
+label { margin: 4px 20px 0; font-family: Verdana; font-size: 80%; float: left; }
+.ui-datepicker .preBooked span { color: #ffffff; background: url(../img/red_horizon.gif) no-repeat; }

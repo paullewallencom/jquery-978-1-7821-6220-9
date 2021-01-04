@@ -1,0 +1,51 @@
+#maze { width: 441px; height: 441px; border: 10px solid #000000; position: relative; background-color: #ffffff; }
+#drag { width: 10px; height: 10px; z-index: 1; background-color: #0000FF; } 
+#start { width: 44px; height: 10px; background-color: #00CC00; position: absolute; top: 0; left: 0; z-index: 0; }
+#end { width: 44px; height: 10px; background-color: #FF0000; position: absolute; top: 0; right: 130px; }
+.wall { background-color: #000000; position: absolute; }
+#a1 { width: 10px; height: 133px; left: 44px; top: 0; }
+#a2 { width: 44px; height: 10px; left: 0; top: 167px; }
+#a3 { width: 44px; height: 10px; left: 44px; top: 220px; }
+#a4 { width: 89px; height: 10px; left: 0; bottom: 176px; }
+#a5 { width: 94px; height: 10px; left: 0; bottom: 88px; }
+#a6 { width: 10px; height: 41px; left: 40px; bottom: 0; }
+#a7 { width: 10px; height: 48px; left: 88px; top: 44px; }
+#a8 { width: 78px; height: 10px; left: 54px; top: 123px; }
+#a9 { width: 10px; height: 97px; left: 88px; top: 133px }
+#a10 { width: 10px; height: 45px; left: 40px; bottom: 98px; }
+#a11 { width: 88px; height: 10px; left: 89px; bottom: 132px; }
+#a12 { width: 10px; height: 97px; left: 132px; bottom: 35px; }
+#a13 { width: 10px; height: 44px; left: 89px; bottom: 142px; }
+#a14 { width: 92px; height: 10px; left: 40px; bottom: 35px; }
+#a15 { width: 89px; height: 10px; left: 88px; top: 34px; }
+#a16 { width: 10px; height: 145px; left: 132px; top: 76px; }
+#a17 { width: 44px; height: 10px; left: 132px; top: 220px; }
+#a18 { width: 133px; height: 10px; left: 132px; bottom: 175px; }
+#a19 { width: 10px; height: 107px; left: 176px; bottom: 35px; }
+#a20 { width: 10px; height: 150px; left: 176px; top: 34px; }
+#a21 { width: 35px; height: 10px; left: 186px; top: 174px }
+#a22 { width: 35px; height: 10px; left: 186px; bottom: 88px; }
+#a23 { width: 122px; height: 10px; left: 186px; top: 88px; }
+#a24 { width: 10px; height: 44px; left: 220px; top: 0px; }
+#a25 { width: 10px; height: 55px; left: 220px; top: 174px; }
+#a26 { width: 10px; height: 45px; left: 220px; bottom: 130px; }
+#a27 { width: 133px; height: 10px; right: 88px; top: 44px; }
+#a28 { width: 10px; height: 168px; right: 166px; top: 98px; }
+#a29 { width: 44px; height: 10px; right: 176px; top: 130px; }
+#a30 { width: 10px; height: 98px; right: 166px; bottom: 35px; }
+#a31 { width: 133px; height: 10px; right: 88px; bottom: 35px; }
+#a32 { width: 10px; height: 133px; right: 78px; top: 44px; }
+#a33 { width: 44px; height: 10px; right: 88px; top: 128px; }
+#a34 { width: 131px; height: 10px; right: 35px; top: 171px; }
+#a35 { width: 43px; height: 10px; right: 123px; top: 220px; }
+#a36 { width: 10px; height: 91px; right: 123px; bottom: 85px; }
+#a37 { width: 131px; height: 10px; right: 35px; bottom: 123px; }
+#a38 { width: 10px; height: 55px; right: 79px; top: 220px; }
+#a39 { width: 44px; height: 10px; right: 0; top: 122px; }
+#a40 { width: 10px; height: 54px; right: 79px; bottom: 35px; }
+#a41 { width: 79px; height: 10px; right: 0; bottom: 79px; }
+#a42 { width: 10px; height: 45px; right: 35px; top: 44px; }
+#a43 { width: 43px; height: 10px; right: 35px; top: 88px; }
+#a44 { width: 79px; height: 10px; right: 0; top: 220px; }
+#a45 { width: 10px; height: 44px; right: 35px; bottom: 132px; }
+#a46 { width: 10px; height: 50px; right: 35px; bottom: 0; }

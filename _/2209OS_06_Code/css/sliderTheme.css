@@ -1,0 +1,3 @@
+.background-div { height: 50px; width: 217px; padding: 36px 0 0 24px; background: url(../img/slider_outerbg.gif) no-repeat; }
+#mySlider { width: 184px; height: 23px; border: none; position: relative; left: 4px; top: 4px; background: url(../img/slider_bg.gif) no-repeat; }
+#mySlider .ui-slider-handle { width: 14px; height: 30px; top: -4px; background: url(../img/slider_handle.gif) no-repeat; }

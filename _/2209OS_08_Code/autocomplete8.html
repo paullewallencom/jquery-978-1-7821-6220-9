@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Autocomplete</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <style>
+	  span { color: green !important; }
+	</style>
+	<script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+    <script src="development-bundle/ui/jquery.ui.autocomplete.js"></script>
+    <script src="js/jquery.ui.autocomplete.html.js"></script>
+	<script>
+	  $(document).ready(function($){
+		var cityList = [
+			{ value: "Aberdeen", label: "Aberdeen" },
+			{ value: "Armagh", label: "Armagh" },
+			{ value: "Bangor", label: "Bangor" },
+			{ value: "Bath", label: "Bath" },
+			{ value: "Canterbury", label: "Canterbury" },
+			{ value: "Cardif", label: "Cardif" },
+			{ value: "Derby", label: "Derby" },
+			{ value: "Dundee", label: "Dundee" },
+			{ value: "Edinburgh", label: "Edinburgh" },
+			{ value: "Exeter", label: "Exeter" },
+			{ value: "Glasgow", label: "Glasgow" },
+			{ value: "Gloucester", label: "Gloucester" },
+			{ value: "Hereford", label: "Hereford" },
+			{ value: "Inverness", label: "Inverness" },
+			{ value: "Leeds", label: "Leeds" },
+			{ value: "London", label: "London" },
+			{ value: "Manchester", label: "Manchester" },
+			{ value: "Norwich", label: "Norwich" },
+			{ value: "Newport", label: "Newport" },
+			{ value: "Oxford", label: "Oxford" },
+			{ value: "Plymouth", label: "Plymouth" },
+			{ value: "Preston", label: "Preston" },
+			{ value: "Ripon", label: "Ripon" },
+			{ value: "Southampton", label: "Southampton" },
+			{ value: "Swansea", label: "Swansea" },
+			{ value: "Truro", label: "Truro" },
+			{ value: "Wakefield", label: "Wakefield" },
+			{ value: "Winchester", label: "Winchester" },
+			{ value: "York", label: "York" }
+		];
+
+		$("#city").autocomplete({
+		  html: true,
+		  source: function(req, resp) {
+			var suggestions = [], regEx = new RegExp("^" + req.term, "i");
+			var chosenTerm = "<span>" + req.term + "</span>";
+
+			//match suggestions to input
+			$.each(cityList, function(i, val){	
+			  if (val.label.match(regEx)) {
+				var obj = {};
+				obj.value = val.value;
+				obj.label = val.label.replace(regEx, chosenTerm);
+				suggestions.push(obj);		
+			  }
+			});
+				
+			resp(suggestions);
+			}
+		  });
+		});
+	  </script>
+	</head>
+	<body>
+    	<label>Enter your city:</label>
+    	<input id="city" />
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tooltip</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.tooltip.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-bounce.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-explode.js"></script>    
+    <script>
+	    $(document).ready(function($){
+	      $(document).tooltip({
+         show: { effect: "bounce", duration: 800 },
+         hide: { effect: "explode", duration: 800 }
+        });
+      });	  	
+    </script>        
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit mi quis imperdiet semper. Fusce vulputate venenatis fringilla. Donec vitae facilisis tortor. Mauris dignissim nibh ac justo ultricies, nec vehicula ipsum ultricies. Mauris molestie felis ligula, id tincidunt urna consectetur at. Praesent <a href="http://www.ipsum.com" title="This was generated from www.ipsum.com">blandit</a> faucibus ante ut semper. Pellentesque non tristique nisi. Ut hendrerit tempus nulla, sit amet venenatis felis lobortis feugiat. Nam ac facilisis magna. Praesent consequat, risus in semper imperdiet, nulla lorem aliquet nisi, a laoreet nisl leo rutrum mauris.
+    </p>
+  </body>
+</html>	 

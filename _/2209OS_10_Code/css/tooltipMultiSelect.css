@@ -1,0 +1,11 @@
+p { font-family: Verdana, sans-serif; }
+
+#tooltip { width: 100px; border: 1px solid #F1D031; font-family: Verdana, sans-serif; font-size: 10px; }
+#title { width: 94px; background-color: #FFEF93; font-weight: bold; padding: 3px; }
+#content { width: 94px; background-color: #FFFFA3; height: 50px; padding: 3px; }
+
+#tooltip2 { width: 110px; border: 1px solid #EBEBEB; font-family: Verdana, sans-serif; font-size: 10px; border-radius: 5px; }
+#title2 { width: 104px; background-color: #370000; font-weight: bold; padding: 3px; color: #ffffff; border-radius: 5px 5px 0 0; height: 15px;}
+#content2 { width: 104px; background-color: #FFFFFF; height: 50px; padding: 3px 3px 0px 3px; }
+#caption2 { margin-left: 20px; }
+#caption2 img { position: absolute; float: left; left: 5px; }

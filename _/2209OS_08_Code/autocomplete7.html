@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<meta charset="utf-8">
+    <title>Autocomplete</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/autocompleteTheme.css">
+    <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+    <script src="development-bundle/ui/jquery.ui.autocomplete.js"></script>
+	  <script>
+		$(document).ready(function($){
+
+		  var getData = function(req, resp){
+			$.getJSON("http://danwellman.co.uk/contacts.php?callback=?", req, function(data) {
+			  var suggestions = [];
+			  $.each(data, function(i, val){								
+			    suggestions.push(val.name);
+			  });
+			  resp(suggestions);
+	  		});
+ 		  };
+
+ 		  var selectEmail = function(e, ui) {
+			var removeLink = $("<a>").addClass("remove").attr({href: "javascript:", title: "Remove " + friend});
+			var friend = ui.item.value,
+			  span = $("<span>").text(friend),
+			  a = removeLink.text("x").appendTo(span);
+			  span.insertBefore("#to");
+			}
+		  
+	  	  $("#to").autocomplete({
+		    source: getData,
+			select: selectEmail
+    	  });
+				
+		  $("#friends").click(function(){
+			$("#to").focus();
+		  });
+
+		  $("#to").click(function(){
+		  	if (this.length != 0) {
+		  		$("#to").val('');
+		  	}
+		  });				
+		});
+	  </script>		
+	</head>
+	<body>
+		<div id="formWrap">
+			<form id="messageForm" action="#">
+				<fieldset>
+					<legend>New message form</legend>
+					<span>New Message</span>
+					<label id="toLabel" for="friends">To:</label>
+					<div id="friends" class="ui-helper-clearfix">
+						<input id="to" type="text">
+					</div>
+					<label for="subject">Subject:</label>
+					<input id="subject" name="subject" type="text">
+					<label for="message">Message:</label>
+					<textarea id="message" name="message" rows="5" cols="50"></textarea>
+					<button type="button" id="cancel">Cancel</button>
+					<button type="submit" id="send">Send</button>
+				</fieldset>
+			</form>
+		</div>
+
+	</body>
+</html>

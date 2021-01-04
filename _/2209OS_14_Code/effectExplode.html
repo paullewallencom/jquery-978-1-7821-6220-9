@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Explode</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <style>
+      body { width: 200px; margin-left: auto; margin-right: auto; }
+    </style>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-explode.js"></script>
+  </head>
+  <script>
+    $(document).ready(function($){
+      $("#theBomb").click(function() {
+        $(this).hide("explode");
+      });
+    });
+  </script>
+  <body>
+    <p>Click the grenade to pull the pin!</p>
+    <img id="theBomb" src="img/nade.jpg">
+  </body>
+</html>

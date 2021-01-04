@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Slider</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/colorSliderTheme.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.slider.js"></script>
+  <script>
+    $(document).ready(function($){
+      $("#rSlider, #gSlider, #bSlider").slider({
+        min:0,
+        max: 255,
+        value: 255,
+        slide: function() {
+          var r = $("#rSlider").slider("value"),
+          g = $("#gSlider").slider("value"),
+          b = $("#bSlider").slider("value");
+          var rgbString = ["rgb(", r, ",", g, ",", b, ")"].join("");
+          $("#colorBox").css({
+            backgroundColor: rgbString
+          });
+          $("#output").val(rgbString);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="container" class="ui-widget ui-corner-all ui-widget-content ui-helper-clearfix">
+  <label>R:</label>
+  <div id="rSlider"></div><br>
+  <label>G:</label>
+  <div id="gSlider"></div><br>
+  <label>B:</label>
+  <div id="bSlider"></div>
+  <div id="colorBox" class="ui-corner-all ui-widget-content"></div>
+  <label for="output" id="outputLabel">Color value:</label>
+  <input id="output" type="text" value="rgb(255,255,255)">
+</div>
+</body>
+</html>

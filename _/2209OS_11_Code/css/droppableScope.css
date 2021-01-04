@@ -1,0 +1,8 @@
+#target_a, #target_b, #group_a, #group_b { width: 150px; height: 150px; padding: 50px; margin: 0 20px 20px 0; border: 2px solid black; float: left;
+font-family: Georgia; font-size: 100px; color: #000000; text-align: center; }
+#group_a, #group_b { width: 518px; height: 115px; padding: 5px 0 5px 5px; margin-bottom: 20px; clear: both; }
+p { float: left; margin: 0 20px 0; }
+.group_a, .group_b { width: 94px; height: 94px; padding: 20px 0 0 20px;
+margin-right: 20px; float: left; font-family: arial; font-size: 14px; color: #000000; text-align: left;
+background: url(../img/draggable.png) no-repeat; }
+.over { background-color: #fe2e2e; }

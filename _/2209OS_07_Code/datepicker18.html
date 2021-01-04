@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  <title>Datepicker</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <style type="text/css">
+    #selecteddate { margin-top: 250px; font-family: Tahoma, sans-serif; }
+  </style>
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>  
+  <script src="development-bundle/ui/jquery.ui.datepicker.js"></script>
+  <script>  
+    $(document).ready(function($){
+      $("#date").datepicker({
+        dateFormat: 'yy-mm-dd',
+        onSelect: function(dateText, inst) {
+          var d = new Date(dateText);
+          var fmt2 = $.datepicker.formatDate("DD, d MM, yy", d);
+          $("#selecteddate").html("Selected date: " + fmt2);
+        }
+      });
+    });
+  </script>
+</head> 
+<body>
+  <label for="date">Enter a date:</label>
+  <input id="date" />
+  <br>
+  <div id="selecteddate"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Puff</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/effectDrop.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-drop.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.button.js"></script>
+  </head>
+  <script>
+    $(document).ready(function($){
+      $("#button").button().click(function() {
+        var button = this, tip = $("<span />", {
+          id: "tip",
+          text: button.title
+        }),
+        tri = $("<span />", {
+          id: "tri"
+        }).appendTo(tip);
+        tip.appendTo("body").position({
+          of: button,
+          my: "right-35 center",
+          at: "left center",
+          offset: "-30 0"
+        });
+        tip.show("drop", { direction: "up" }, function() {
+          $(this).delay(1000).fadeOut();
+        });
+      });
+    });
+  </script>
+  <body>
+    <a id="button" href="#" title="This button does nothing">Click me!</a>
+  </body>
+</html>

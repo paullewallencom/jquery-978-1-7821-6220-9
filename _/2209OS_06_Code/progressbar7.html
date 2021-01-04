@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Progressbar</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/uploads.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.progressbar.js"></script>
+  <script type="text/javascript" src="js/uploads.js"></script>
+  <script>
+	$("document").ready(function($) {
+		if (window.File && window.FileList && window.FileReader) {
+			$("#fileselect").on("change", function(e) {
+				var files = e.target.files || e.dataTransfer.files;
+
+				for (var i = 0, f; f = files[i]; i++) {
+					ParseFile(f);
+					UploadFile(f);
+				}
+			});
+		}
+	});
+  </script>
+</head>
+<body>
+	<div id="container">
+		<h1>HTML5 File Reader API</h1>
+		<form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+			<fieldset>
+				<legend>Image Upload</legend>
+				<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+				<div>
+					<label for="fileselect">Images to upload:</label>
+					<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+				</div>
+				<div id="progress"></div>
+			</fieldset>
+		</form>
+		<div id="messages"></div>		
+	</div>
+</body>
+</html>

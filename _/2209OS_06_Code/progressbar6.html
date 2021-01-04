@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Progressbar</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/progressTheme.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.progressbar.js"></script>
+  <script>
+    $(document).ready(function($){
+		var prog = $("#myProgressbar"),
+		progressOpts = {
+			change: function() {
+				prog.next().text(prog.progressbar("value") + "%");
+			}
+		};
+		prog.progressbar(progressOpts);
+		$("#next, #back").click(function() {
+			$("button").attr("disabled", true);
+			if (this.id == "next") {
+				prog.progressbar("option", "value",
+				prog.progressbar("option", "value") + 50);
+				$("form").find("div:visible").fadeOut().next().fadeIn(function(){
+					$("#back").attr("disabled", false);
+					if (!$("form").find("div:last").is(":visible")) {
+						$("#next").attr("disabled", false);
+					}
+				});
+			} else {
+				prog.progressbar("option", "value", prog.progressbar("option", "value") - 50);
+				$("form").find("div:visible").not(".buttons")
+				    .fadeOut().prev().fadeIn(function() {
+					$("#next").attr("disabled", false);
+					if (!$("form").find("div:first").is(":visible")) {
+						$("#back").attr("disabled", false);
+					}
+				});
+			}
+		});
+    });
+  </script>
+</head>
+<body>
+	<div class="form-container ui-helper-clearfix ui-corner-all">
+		<h1>Registration Form</h1>
+		<p>Progress:</p>
+		<div id="myProgressbar"></div>
+		<label id="amount">0%</label>
+		<form action="serverScript.php">
+			<div class="form-panel">
+				<h2>Personal Details</h2>
+				<fieldset class="ui-corner-all">
+					<label for="name">Name:</label>
+					<input id="name" type="text">
+					<label for="dob">D.O.B:</label>
+					<input id="dob" type="text">
+					<label for="passwrd1">Choose password:</label>
+					<input id="passwrd1" type="password">
+					<label for="passwrd2">Confirm password:</label>
+					<input id="passwrd2" type="password">
+				</fieldset>
+			</div>
+			<div class="form-panel ui-helper-hidden">
+				<h2>Contact Details</h2>
+				<fieldset class="ui-corner-all">
+					<label for="email">Email:</label>
+					<input id="email" type="text">
+					<label for="tel">Telephone:</label>
+					<input id="tel" type="text">
+					<label for="address">Address:</label>
+					<textarea id="address" rows="3" cols="25"></textarea>
+				</fieldset>
+			</div>
+			<div class="form-panel ui-helper-hidden">
+				<h2>Registration Complete</h2>
+				<fieldset class="ui-corner-all">
+					<p>Thanks for registering!</p>
+				</fieldset>
+			</div>
+		</form>	
+		<button id="next">Next</button>
+		<button id="back" disabled="disabled">Back</button>
+	</div>
+</body>
+</html>

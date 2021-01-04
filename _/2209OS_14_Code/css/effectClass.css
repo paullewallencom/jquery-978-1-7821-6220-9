@@ -1,0 +1,5 @@
+div { margin-bottom: 5px; }
+label { display: block; width: 100px; float: left; }
+input { border: 1px solid #000000; }
+.error { border: 1px solid #ff0000; background-color: #ff9999; }
+.pass { border: 1px solid #00ff00; background-color: #ccffcc; }

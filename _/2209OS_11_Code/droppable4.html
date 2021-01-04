@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Droppable</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/droppableActive.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+    <script src="development-bundle/ui/jquery.ui.droppable.js"></script>
+    <script>
+	    $(document).ready(function($){
+	  	  $(".drag").draggable();
+        $("#target").droppable({
+          hoverClass: "activated",
+          tolerance: "pointer"
+        });
+      });	  	
+    </script>        
+  </head>
+  <body>
+    <div class="drag"></div>
+    <div id="target"></div>
+  </body>
+</html>	  	

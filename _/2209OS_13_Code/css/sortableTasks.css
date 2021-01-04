@@ -1,0 +1,9 @@
+#drag { padding: 0 0 0 11px; margin: 0; float: left; }
+#drag li { font-style: italic; color: #999; }
+#drag li input { width: 175px; }
+#taskList { width: 250px; height: 400px; clear: both; background: url(../img/paper.jpg) no-repeat; }
+#tasks { width: 170px; padding: 89px 0 0; margin: 0; float: right; }
+#tasks li, #drag li { height: 28px; padding-top: 5px; list-style-type: none; }
+#add { display: none; width: 24px; height: 24px; position: absolute; left: 218px; top: 13px;
+background: url(../img/add.png) no-repeat; }
+#add.down { background: url(../img/down.png) no-repeat; }

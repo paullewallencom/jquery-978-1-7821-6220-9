@@ -1,0 +1,3 @@
+#selectables div { width: 190px; height: 25px; padding: 5px 0 0 10px; margin: 10px 0 0 10px; border: 1px solid #000; }
+#selectables div.ui-selecting { border: 1px solid #fe2f2f; }
+#selectables div.ui-selected { background: #fe2f2f; color: #fff; }

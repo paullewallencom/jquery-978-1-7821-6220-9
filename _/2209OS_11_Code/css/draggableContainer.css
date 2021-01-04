@@ -1,0 +1,3 @@
+#drag { width: 114px; height: 114px; background: url(../img/draggable.png) no-repeat; }
+#container { height: 250px; width: 250px; border: 2px solid #ff0000; }
+.ui-draggable-dragging { cursor: move; }

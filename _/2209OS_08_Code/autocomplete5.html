@@ -1,0 +1,64 @@
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Autocomplete</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+	<script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+    <script src="development-bundle/ui/jquery.ui.autocomplete.js"></script>
+	<script>
+	  $(document).ready(function($){
+		$("#city").autocomplete({
+		  source: [
+		    { value: "AB", label: "Aberdeen", population: 212125 },
+		    { value: "AR", label: "Armagh", population: 54263 },
+		    { value: "BA", label: "Bangor", population: 21735 },
+		    { value: "BA", label: "Bath", population: 83992 },
+		    { value: "CA", label: "Canterbury", population: 43432 },
+		    { value: "CD", label: "Cardiff", population: 336200 },
+		    { value: "DE", label: "Derby", population: 233700 },
+	  	    { value: "DU", label: "Dundee", population: 152320 },
+		    { value: "ED", label: "Edinburgh", population: 448624 },
+		    { value: "EX", label: "Exeter", population: 118800 },
+		    { value: "GL", label: "Glasgow", population: 580690 },
+		    { value: "GO", label: "Gloucester", population: 123205 },
+		    { value: "HE", label: "Hereford", population: 55700 },
+		    { value: "IN", label: "Inverness", population: 56660 },
+		    { value: "LE", label: "Leeds", population: 443247 },
+		    { value: "LO", label: "London", population: 7200000 },
+		    { value: "MA", label: "Manchester", population: 483800 },
+		    { value: "NO", label: "Norwich", population: 259100 },
+		    { value: "NE", label: "Newport", population: 137011 },
+		    { value: "OX", label: "Oxford", population: 149300 },
+		    { value: "PL", label: "Plymouth", population: 256700 },
+		    { value: "PR", label: "Preston", population: 114300 },
+		    { value: "RI", label: "Ripon", population: 15922 },
+		    { value: "SO", label: "Southampton", population: 236700 },
+		    { value: "SW", label: "Swansea", population: 223301 },
+		    { value: "TR", label: "Truro", population: 17431 },
+		    { value: "WA", label: "Wakefield", population: 76886 },
+		    { value: "WI", label: "Winchester", population: 41420 },
+		    { value: "YO", label: "York", population: 182000 }
+		  ],
+		  select: function(e, ui) {		  	
+			if ($("#pop").length) {
+			  $("#pop").text(ui.item.label + "'s population is: " + ui.item.population);
+		    } else {
+		      $("<p></p>", {
+		        id: "pop",
+		        text: ui.item.label + "'s population is: " + ui.item.population
+		      }).insertAfter("#city");
+		    }
+		  }
+		});
+	  });
+    </script>     
+  </head>
+  <body>
+      <label>Enter your city:</label>
+      <input id="city">
+  </body>
+</html>

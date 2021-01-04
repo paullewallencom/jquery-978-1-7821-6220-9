@@ -1,0 +1,10 @@
+#drag {
+  width: 114px; height: 114px;
+  background: url(../img/draggable.png) no-repeat;
+}
+
+#handle {
+	width: 30px; height: 30px; border-bottom: 2px solid #ff0000;
+	border-left: 2px solid #ff0000; position: absolute;
+	right: 10px; top: 10px; cursor: move;
+}

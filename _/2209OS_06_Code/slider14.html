@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Slider</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/sliderTheme3.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.slider.js"></script>
+  <script>
+    $(document).ready(function($){
+      var audio = $("audio")[0];
+      audio.volume = 0.5;
+      audio.play();
+
+      $("#volume").slider({
+        value: 5,
+        min: 0,
+        max: 10,
+        change: function() {
+          var vol = $(this).slider("value") / 10;
+          audio.volume = vol;
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <audio id="audio" controls="controls" src="media/prelude.mp3">
+    Your browser does not support the <code>audio</code> element.
+  </audio>
+  <div id="volume"></div>
+</body>
+</html>

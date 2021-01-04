@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Selectable</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/selectableMany.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="development-bundle/ui/jquery.ui.selectable.js"></script>
+    <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+    <script>
+	    $(document).ready(function($){
+        var $selectable = $(".selectable");
+        for(var i = 0; i < 100; i++) {
+          $selectable.parent().append($selectable.clone());
+        }
+
+       $("#selectables").selectable({
+          autoRefresh: false
+        });
+        $("#selectables div").draggable();
+        $("#refresh").click(function() {
+          $("#selectables").selectable("refresh");
+        });
+      });	  	
+    </script> 
+  </head>
+  <body>
+    <div id="selectables" class="ui-helper-clearfix">
+      <div class="selectable">Selectable</div>
+    </div>
+    <p>
+    <button id="refresh">Refresh</button>
+  </body>
+</html>

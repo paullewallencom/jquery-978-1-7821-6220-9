@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  <title>Datepicker</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/datepickerTheme.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>  
+  <script src="development-bundle/ui/jquery.ui.datepicker.js"></script>
+  <script>  
+    $(document).ready(function($){
+      var months = [], days = [];
+      $.getJSON("http://www.danwellman.co.uk/bookedDates.php?jsoncallback=?", function(data) {
+        for (var x = 0; x < data.dates.length; x++) {
+          months.push(data.dates[x].month);
+          days.push(data.dates[x].day);
+        }
+      });
+      
+      function disableDates(date) {
+        for (var x = 0; x < days.length; x++) {
+          if (date.getMonth() == months[x] - 1 && date.getDate() == days[x]) {
+            return [false, "preBooked"];
+          }
+        }
+        return [true, ""];
+      }
+
+      function noWeekendsOrDates(date) {
+        var noWeekend = jQuery.datepicker.noWeekends(date);
+        return noWeekend[0] ? disableDates(date) : noWeekend;
+      }
+
+      $("#date").datepicker({
+        beforeShowDay: noWeekendsOrDates,
+        minDate: "+1"
+      });
+    });
+  </script>
+</head> 
+<body>
+  <div id="bookingForm" class="ui-widget ui-corner-all">
+    <div class="ui-widget-header ui-corner-top">
+      <h2>Booking Form</h2>
+    </div>
+    <div class="ui-widget-content ui-corner-bottom">
+      <label for "date">Appointment date:</label>
+      <input id="date">
+    </div>
+  </div>
+</body>
+</html>

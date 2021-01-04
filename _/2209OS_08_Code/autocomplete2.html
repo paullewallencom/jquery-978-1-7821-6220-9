@@ -1,0 +1,54 @@
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Autocomplete</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+	<script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+    <script src="development-bundle/ui/jquery.ui.autocomplete.js"></script>
+	<script>
+	  $(document).ready(function($){
+      $("#city").autocomplete({
+        source: [
+          { value: "AB", label: "Aberdeen" },
+          { value: "AR", label: "Armagh" },
+          { value: "BA", label: "Bangor" },
+          { value: "BA", label: "Bath" },
+          { value: "CA", label: "Canterbury" },
+          { value: "CD", label: "Cardiff" },
+          { value: "DE", label: "Derby" },
+          { value: "DU", label: "Dundee" },
+          { value: "ED", label: "Edinburgh" },
+          { value: "EX", label: "Exeter" },
+          { value: "GL", label: "Glasgow" },
+          { value: "GO", label: "Gloucester" },
+          { value: "HE", label: "Hereford" },
+          { value: "IN", label: "Inverness" },
+          { value: "LE", label: "Leeds" },
+          { value: "LO", label: "London" },
+          { value: "MA", label: "Manchester" },
+          { value: "NO", label: "Norwich" },
+          { value: "NE", label: "Newport" },
+          { value: "OX", label: "Oxford" },
+          { value: "PL", label: "Plymouth" },
+          { value: "PR", label: "Preston" },
+          { value: "RI", label: "Ripon" },
+          { value: "SO", label: "Southampton" },
+          { value: "SW", label: "Swansea" },
+          { value: "TR", label: "Truro" },
+          { value: "WA", label: "Wakefield" },
+          { value: "WI", label: "Winchester" },
+          { value: "YO", label: "York" }
+        ]
+      });
+	  });
+    </script>     
+  </head>
+  <body>
+    <label>Enter your city:</label>
+    <input id="city">
+  </body>
+</html>

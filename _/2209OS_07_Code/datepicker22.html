@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  <title>Datepicker</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>  
+  <script src="development-bundle/ui/jquery.ui.datepicker.js"></script>
+  <script src="development-bundle/ui/i18n/jquery-ui-i18n.js"></script>
+  <script>  
+    $(document).ready(function($){
+      $("#date").datepicker({
+        beforeShow: function() {
+          var lang = $(":selected", $("#language")).attr("id");
+          $.datepicker.setDefaults($.datepicker.regional[lang])
+        }
+      });
+      $.datepicker.setDefaults($.datepicker.regional['']);     
+    });
+  </script>
+</head> 
+<body>
+  <label for="date">Enter a date:</label>
+  <input id="date" />
+  <select id="language">
+    <option id="en-GB">English</option>
+    <option id="ar">Arabic</option>
+    <option id="ar-DZ">Algerian Arabic</option>
+    <option id="az">Azerbaijani</option>
+    <option id="bg">Bulgarian</option>
+    <option id="bs">Bosnian</option>
+    <option id="ca">Catalan</option>
+    <option id="cs">Czech</option>
+    <option id="da">Danish</option>
+    <option id="de">German</option>
+    <option id="el">Greek</option>
+    <option id="en-AU">English/Australia</option>
+    <option id="en-NZ">English/New Zealand</option>
+    <option id="en-US">English/United States</option>
+    <option id="eo">Esperanto</option>
+    <option id="es">Spanish</option>
+    <option id="et">Estonian</option>
+    <option id="eu">Euskarako</option>
+    <option id="fa">Farsi</option>
+    <option id="fi">Finnish</option>
+    <option id="fo">Faroese</option>
+    <option id="fr">French</option>
+    <option id="fr-CH">Swiss-French</option>
+    <option id="gl">Galician</option>
+    <option id="he">Hebrew</option>
+    <option id="hr">Croatian</option>
+    <option id="hu">Hungarian</option>
+    <option id="hy">Armenian</option>
+    <option id="id">Indonesian</option>
+    <option id="is">Icelandic</option>
+    <option id="it">Italian</option>
+    <option id="ja">Japanese</option>
+    <option id="ko">Korean</option>
+    <option id="kz">Kazakh</option>
+    <option id="lt">Lithuanian</option>
+    <option id="lv">Latvian</option>
+    <option id="ml">Malayalam</option>
+    <option id="ms">Malaysian</option>
+    <option id="nl">Dutch</option>
+    <option id="no">Norwegian</option>
+    <option id="pl">Polish</option>
+    <option id="pt-BR">Brazillian</option>
+    <option id="pt">Portuguese</option>
+    <option id="rm">Romansh</option>
+    <option id="ro">Romanian</option>
+    <option id="ru">Russian</option>
+    <option id="sk">Slovakian</option>
+    <option id="sl">Slovenian</option>
+    <option id="sq">Albanian</option>
+    <option id="sr-SR">Serbian</option>
+    <option id="sv">Swedish</option>
+    <option id="ta">Tamil</option>
+    <option id="th">Thai</option>
+    <option id="tr">Turkish</option>
+    <option id="uk">Ukrainian</option>
+    <option id="vi">Vietnamese</option>
+    <option id="zh-CN">Chinese</option>
+    <option id="zh-HK">Chinese</option>
+    <option id="zh-TW">Taiwanese</option>
+  </select>
+</body>
+</html>

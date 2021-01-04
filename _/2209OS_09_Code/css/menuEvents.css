@@ -1,0 +1,6 @@
+#menutext { width: 150px; font-family: Lucida Grande,Lucida Sans,Arial,sans-serif; text-align: center; }
+.ui-menu { width: 150px; }
+.hilitetext { background-color:  #a6c9e2; padding: 3px; border-radius: 4px; margin-top: 6px; }
+.normaltext { background-color: #fff; padding: 3px; margin-top: 6px; }
+.selected { background-color : #313c43;  border-radius: 4px; }
+.selected a { color: #fff; }

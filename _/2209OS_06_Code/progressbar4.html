@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Progressbar</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/progressIncrease.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.progressbar.js"></script>
+  <script>
+    $(document).ready(function($){
+		var progress = $("#myProgressbar");
+		progress.progressbar();
+		$("#increase").click(function() {
+			var currentVal = progress.progressbar("option", "value"), newVal = currentVal + 10;
+			progress.progressbar("value", newVal);
+			if (!$("#value").length) {
+				$("<span />", { text: newVal + "%", id: "value" }).appendTo(progress);
+			} else {
+				$("#value").text(newVal + "%");
+			}
+		});
+	});
+  </script>
+</head>
+<body>
+  <div id="myProgressbar"></div>
+  <p><button id="increase">Increase by 10%</button>
+</body>
+</html>

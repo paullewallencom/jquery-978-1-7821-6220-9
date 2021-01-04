@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Accordion</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>  
+  <script src="development-bundle/ui/jquery.ui.accordion.js"></script>
+  <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+  <script>
+    $(document).ready(function($) {
+      $("#myAccordion").accordion({
+        beforeActivate: function(e, ui) {
+          if (ui.newHeader.attr("id") === "remote") {
+            $.get(ui.newHeader.find("a").attr("href"),
+            function(data) {
+              ui.newHeader.next().text(data);
+            });
+          }
+        },
+        activate: function(e, ui) {
+          ui.newHeader.closest("#myAccordion").accordion("refresh");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="myAccordion">
+    <h2><a href="#">Header 1</a></h2>
+    <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean sollicitudin. Sed interdum pulvinar justo. Nam iaculis volutpat ligula. Integer vitae felis quis diam laoreet ullamcorper.</div>
+    <h2><a href="#">Header 2</a></h2>
+    <div>Etiam tincidunt est vitae est. Ut posuere, mauris at sodales rutrum, turpis tellus fermentum metus, ut bibendum velit enim eu lectus. Suspendisse poten-ti.</div>
+    <h2 id="remote"><a href="remoteAccordion.txt">Remote</a></h2>
+    <div></div>
+  </div>
+</body>
+</html>

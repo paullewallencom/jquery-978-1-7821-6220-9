@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Button</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.button.js"></script>
+  <script>  
+    $(document).ready(function($){
+      var form = $("form"), formData = {
+        name: form.find("#name").val(),
+        email: form.find("#email").val()
+      };      
+
+      $("#myButton").button();
+      $("#myButton").click(function(e) {
+        e.preventDefault();
+        form.find("label").remove();
+
+        $("#myButton").button("option", "disabled", true);
+
+        $.post("register.php", formData, function() {
+          $("<label />", { text: "Thanks for registering!" }).prependTo(form);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <form>
+    <label for="name">Name:
+      <input type="text" id="name" name="name">
+    </label>
+    <label for="email">Email:
+      <input type="text" id="email" name="email">
+    </label>
+    <p>
+      <input type="submit" id="myButton" value="Register" />
+    </p>
+  </form>
+</body>
+</html>

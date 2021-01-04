@@ -1,0 +1,13 @@
+h1, h2 { font-family: Tahoma; font-size: 140%; margin-top: 0; }
+h2 { margin: 20px 0 10px; font-size: 100%; text-align: left; }
+p { margin: 0; font-size: 95%; position: absolute; left: 30px; top: 60px; font-weight: bold; }
+#amount { position: absolute; right: 30px; top: 60px; font-size: 80%; font-weight: bold; }
+#thanks { text-align: center; }
+#thanks p { margin-top: 48px; font-size: 160%; position: relative; left: 0; top: 0; }
+form { height: 265px; position: relative; }
+.form-container { width: 400px; margin: 0 auto; position: relative; font-family: Verdana; font-size: 80%; padding: 20px; background-color: #C5DBEC; border: 1px solid #2E6E9E; }
+.form-panel { width: 400px; height: 241px; position: absolute; top: 0; left: 0; } 
+fieldset { width: 397px; height: 170px; margin: 0 auto; padding: 22px 0 0; border: 1px solid #abadac; background-color: #ffffff; }
+label { width: 146px; display: block; float: left; text-align: right; padding-top: 2px; margin-right: 10px; }
+input, textarea { float: left; width: 200px; margin-bottom: 13px; }
+button { float: right; }

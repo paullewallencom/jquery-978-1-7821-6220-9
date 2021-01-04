@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Droppable</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/dragMaze.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+    <script src="development-bundle/ui/jquery.ui.droppable.js"></script>
+    <script>
+	    $(document).ready(function($){
+        var dragOpts = {
+          containment: "#maze"
+        },
+        dropOpts = {
+          tolerance: "touch",
+          over: function(e, ui) {
+            $("#drag").draggable("destroy").remove();
+            $("<div />", {
+              id: "drag",
+              css: {
+                left: 0,
+                top: 0
+              }
+            }).appendTo("#maze");
+            $("#drag").draggable(dragOpts);
+          }
+        },
+        endOpts = {
+          over: function(e, ui) {
+            $("#drag").draggable("destroy").remove();
+              alert("Woo! You did it!");
+            }
+          };
+          for (var x = 1; x < 47; x++) {
+            $("<div />", {
+              id: "a" + x,
+          class: "wall"
+          }).appendTo("#maze");
+        }
+        $("#drag").draggable(dragOpts);
+        $(".wall").droppable(dropOpts);
+        $("#end").droppable(endOpts);
+      });
+    </script>        
+  </head>
+  <body>
+    <div id="maze">
+      <div id="drag"></div>
+      <div id="start"></div>
+      <div id="end"></div>
+    </div>
+  </body>
+</html>	  	

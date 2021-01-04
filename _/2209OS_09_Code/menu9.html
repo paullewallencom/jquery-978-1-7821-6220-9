@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+	<link rel="stylesheet" href="css/menuEvents.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+    <script>
+	  $(document).ready(function($){
+	  	var menuarray;
+	  	
+	    $("#myMenu").menu();
+
+	    $("#myMenu").on("menuselect", function( event, ui ) {
+		  $('.selected', this).removeClass('selected');
+		  ui.item.addClass('selected');	
+		  menuarray = ui.item.text().split(" ");
+	      $("#menutext").text("You clicked on: " + menuarray[0]);
+	    });	    
+
+	    $("#myMenu").on("menufocus", function( event, ui ) {
+		  if ($("#menutext").text() != "") {
+			$("#menutext").removeClass("normaltext").addClass("hilitetext");
+		  }	
+	    });
+
+	    $("#myMenu").on("menublur", function( event, ui ) {
+		  $("#menutext").removeClass("hilitetext").addClass("normaltext");
+	    });
+
+      });	  	
+    </script>        
+  </head>
+  <body>
+	<ul id="myMenu">
+	  <li class="ui-state-disabled"><a href="#">London</a></li>
+	  <li><a href="#">Antwerp</a></li>
+	  <li>
+ 	    <a href="#">Belgium</a>
+	    <ul>
+	      <li class="ui-state-disabled"><a href="#">Antwerp</a></li>
+	      <li><a href="#">Brussels</a></li>
+		  <li><a href="#">Bruges</a></li>
+	    </ul>
+	  </li>
+	  <li><a href="#">Brussels</a></li>
+	  <li>
+	    <a href="#">Bruges</a>
+	    <ul>
+	      <li><a href="#">Belgium</a>
+	        <ul>
+	          <li><a href="#">Antwerp</a></li>
+	          <li><a href="#">Brussels</a></li>
+	          <li><a href="#">Bruges</a></li>
+	        </ul>
+	      </li>
+	      <li><a href="#">Belgium</a>
+	        <ul>
+	          <li><a href="#">Antwerp</a></li>
+	          <li><a href="#">Brussels</a></li>
+	          <li><a href="#">Bruges</a></li>
+	        </ul>
+	      </li>
+	      <li><a href="#">Paris</a></li>
+	    </ul>
+	  </li>
+	  <li class="ui-state-disabled"><a href="#">Amsterdam</a></li>
+	</ul>
+	<div id="menutext"></div>
+  </body>
+</html>	  	

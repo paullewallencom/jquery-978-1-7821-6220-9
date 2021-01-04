@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Puff</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-scale.js"></script>
+  </head>
+  <script>
+    $(document).ready(function($){
+      $("#loader").click(function() {
+        $(this).hide("puff");
+      });
+    });
+  </script>
+  <body>
+    <img id="loader" src="img/ajax-loader.gif">
+  </body>
+</html>

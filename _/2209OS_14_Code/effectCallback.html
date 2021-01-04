@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Color Animations</title>
+    <link rel="stylesheet" href="css/effectHighlight.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-highlight.js"></script>
+  </head>
+  <script>
+    $(document).ready(function($){
+      $("#hint").click(function() {
+        var os = navigator.userAgent;
+        if (os.search(/windows/i) !== -1) {
+          var el = $("#win");
+        } else if (os.search(/mac/i) !== -1) {
+          var el = $("#mac");
+        } else if (os.search(/linux/i) !== -1) {
+          var el = $("#linux");
+        }
+        $(el).effect("highlight", {}, function() {
+          $("<p />", {
+            text: "That was the highlight"
+          }).appendTo("body").delay(2000).fadeOut();
+        });
+      });
+    });
+  </script>
+  <body>
+    <h1>Choose the correct download below:</h1>
+    <a id="win" href="#"><img src="img/iconWin.png"></a>
+    <a id="mac" href="#"><img src="img/iconMac.png"></a>
+    <a id="linux" href="#"><img src="img/iconLinux.png"></a>
+    <button id="hint">Hint</button>
+  </body>
+</html>

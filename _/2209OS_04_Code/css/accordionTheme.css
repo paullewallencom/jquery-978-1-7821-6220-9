@@ -1,0 +1,6 @@
+#myAccordion { width: 400px; border: 1px solid #636363; padding-bottom: 1px; }
+#myAccordion .ui-state-active { background: #fff; } 
+.ui-accordion-header { border: 1px solid #fff; font-family: Georgia; background: #e2e2e2 none; }
+.ui-widget-content { font-size: 70%; border: none; }
+.ui-corner-all { border-radius:  0; }
+.ui-accordion .ui-accordion-header { margin: 0 0 -1px; }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dialog</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.position.js"></script>
+  <script src="development-bundle/ui/jquery.ui.dialog.js"></script>
+  <script src="development-bundle/ui/jquery.ui.button.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+  <script src="development-bundle/ui/jquery.ui.resizable.js"></script>
+  <script>
+    $(document).ready(function($){
+      $("#dialog1, #dialog2").dialog(); 
+    });
+  </script>
+</head>
+<body>
+  <div id="dialog1" title="Dialog 1">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aenean sollicitudin. Sed interdum pulvinar justo. Nam aculis
+    volutpat ligula. Integer vitae felis quis diam laoreet
+    ullamcorper. Etiam tincidunt est vitae est.
+  </div>
+  <div id="dialog2" title="Dialog 2">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+    sollicitudin. Sed interdum pulvinar justo. Nam iaculis volutpat
+    ligula. Integer vitae felis quis diam laoreet ullamcorper. Etiam
+    tincidunt est vitae est.
+  </div> 
+</body>
+</html>

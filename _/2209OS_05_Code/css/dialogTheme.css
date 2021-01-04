@@ -1,0 +1,8 @@
+#thumbs { width: 342px; padding: 10px 0 10px 10px; border: 1px solid #ccc; background-color: #eee; }
+#thumbs p { width: 330px; font-family: Verdana; font-size: 9px; text-align: center; }
+.thumb { width: 310px; height: 114px; padding: 10px; border: 1px solid #ccc; border-bottom: none; }
+.last { border-bottom: 1px solid #ccc; }
+.thumb img { border: 1px solid #ccc; margin-right: 10px; float: left; cursor: pointer; }
+.thumb h3 { margin: 0; float: left; width: 198px; }
+#thumbs .thumb p { width: 310px; margin: 0; font-family: Verdana, "sans-serif"; font-size: 13px; text-align: left; }
+#thumbs .ui-widget-header { width: 330px; text-align: center; }

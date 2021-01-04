@@ -1,0 +1,2 @@
+#tip { display:none; padding:10px 20px 10px 10px; position:absolute; background-color:#cecece; }
+#tri { border-top: 20px solid transparent; border-right: 30px solid #cecece; border-bottom: 20px solid transparent; position: absolute; left: -30px; top: 0; }

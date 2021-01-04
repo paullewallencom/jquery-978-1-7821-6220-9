@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dialog</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/dialogTheme.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.position.js"></script>
+  <script src="development-bundle/ui/jquery.ui.dialog.js"></script>
+  <script src="development-bundle/ui/jquery.ui.button.js"></script>
+  <script src="development-bundle/ui/jquery.ui.accordion.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+  <script src="development-bundle/ui/jquery.ui.resizable.js"></script>
+  <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+  <script src="development-bundle/ui/jquery.ui.effect-clip.js"></script>
+  <script>
+    $(document).ready(function($){
+	  var filename, titleText,
+		dialogOpts = {
+		  modal: true,
+		  width: 388,
+		  height: 470,
+		  autoOpen: false,
+		  open: function(event, ui) {
+		    $("#dialog").empty();
+		    $("<img>").attr("src", filename).appendTo("#dialog");
+		    $("#dialog").dialog("option", "title", titleText);
+          },
+          hide: {
+            effect: "clip"
+          }
+		};
+		$("#dialog").dialog(dialogOpts);
+		$("#thumbs").find("a").click(function(e) {
+			e.preventDefault();
+			filename = $(this).attr("href");
+			titleText = $(this).attr("title");
+			$("#dialog").dialog("open");
+		});
+	});
+  </script>
+</head>
+<body>
+	<div id="thumbs" class="ui-corner-all">
+		<div class="ui-widget-header ui-corner-top">
+			<h2>Some Common Flowers</h2>
+		</div>
+		<p>(click a thumbnail to view a full-size image)</p>
+
+		<div class="thumb ui-helper-clearfix ui-widget-content">
+			<a href="img/haFull.jpg" title="Helianthus annuus"><img src="img/haThumb.jpg" alt="Helianthus annuus"></a>
+			<h3>Helianthus annuus</h3>
+			<p>Sunflowers (Helianthus annuus) are annual plants native to
+			the Americas, that possess a large flowering head</p>
+		</div>
+
+		<div class="thumb ui-helper-clearfix ui-widget-content">
+			<a href="img/lcFull.jpg" title="Lilium columbianum"><img src="img/lcThumb.jpg" alt="Lilium columbianum"></a>
+			<h3>Lilium columbianum</h3>
+			<p>The Lilium columbianum is a lily native to western North
+			America. It is also known as the Columbia Lily or Tiger Lily</p>
+		</div>
+
+		<div class="thumb ui-helper-clearfix ui-widget-content">
+			<a href="img/msFull.jpg" title="Myosotis scorpioides"><img src="img/msThumb.jpg" alt="Myosotis scorpioides"></a>
+			<h3>Myosotis scorpioides</h3>
+			<p>The Myosotis scorpioides, or Forget-me-not, is a
+			herbaceous perennial plant of the genus Myosotis.</p>
+		</div>
+
+		<div class="thumb ui-helper-clearfix ui-widget-content last">
+			<a href="img/nnFull.jpg" title="Nelumbo nucifera"><img src="img/nnThumb.jpg" alt="Nelumbo nucifera"></a>
+			<h3>Nelumbo nucifera</h3>
+			<p>Nelumbo nucifera is known by a number of names including;
+			Indian lotus, sacred lotus, bean of India, or simply lotus.</p>
+		</div>
+	</div>
+	<div id="dialog"></div>
+</body>
+</html>

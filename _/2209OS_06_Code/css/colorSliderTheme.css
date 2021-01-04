@@ -1,0 +1,7 @@
+#container { width: 426px; height: 146px; padding: 20px 20px 0; position: relative; font-size: 11px; background: #eee; }
+#container label { float: left; text-align: right; margin: 0 30px 26px 0; clear: left; }
+.ui-slider { width: 240px; float: left; }
+.ui-slider-handle { width: 15px; height: 27px; }
+#colorBox { width: 104px; height: 94px; float: right; margin: -83px 0 0 0; background: #fff; }
+#container #outputLabel { float: right; margin: -14px 34px 0 0; }
+#output { width: 100px; text-align: center; float: right; clear: both; margin-top: -17px;}

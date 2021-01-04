@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+	<title>Menu</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" type="text/css" href="css/menuIcons.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+  	<script>
+  	  $(document).ready(function($){
+  		  $("#myMenu").menu();
+
+        $("#removeitem").click(function() {
+          $("#ui-id-3").remove();
+          $("#myMenu li:nth-child(3)").remove();
+          $("#myMenu").menu("refresh");
+        });
+      });
+    </script>
+  </head>
+  <body>
+	<ul id="myMenu">
+	  <li><a href="#">File</a></li>
+      <li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Read email</a></li>
+      <li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Move to folder...</a></li>
+      <li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-print"></span>Print...</a></li>      
+      <li><a href="#"><span class="ui-icon ui-icon-contact"></span>Address Book</a></li>
+      <li>
+      	<a href="#">Edit</a>
+        <ul>
+		  <li><a href="#"><span class="ui-icon ui-icon-pencil"></span>Compose email</a></li>
+		  <li><a href="#"><span class="ui-icon ui-icon-bookmark"></span>Mark email</a></li>
+          <li><a href="#"><span class="ui-icon ui-icon-trash"></span>Send to trash</a></li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+    <form>
+      <input type="button" id="removeitem" value="Remove menu item" />
+    </form>
+  </body>
+</html>

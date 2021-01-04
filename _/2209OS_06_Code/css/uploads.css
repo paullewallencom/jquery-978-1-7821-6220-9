@@ -1,0 +1,9 @@
+body { font-family: "Segoe UI", Tahoma, Helvetica, Freesans, sans-serif; font-size: 90%; margin: 10px; color: #333; background-color: #fff; }
+#container { margin-left: auto; margin-right: auto; width: 430px; }
+#messages { padding: 0 10px; margin: 1em 0; border: 1px solid #999; width: 400px; clear: both; height: 275px; }
+#messages p { position: absolute; float: left; margin-left: 275px; width: 150px; }
+#progress { margin-top: 3px; width: 390px; left: -2px; }
+h1 { font-size: 1.5em; font-weight: normal; }
+legend { font-weight: bold; color: #333; }
+.preview { height: 60%; width: 60%; float: left; }
+fieldset { width: 400px; }

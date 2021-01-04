@@ -1,0 +1,2 @@
+#selectables div { width: 70px; height: 25px; padding: 5px 0 0 10px; border: 1px solid #000; margin: 10px 0 0 10px; float: left; }
+.ui-selected { background-color: #fe2f2f; }

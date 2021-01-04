@@ -1,0 +1,4 @@
+.player { width: 642px; height: 362px; border: 2px groove gray; background: rgb(200, 200, 200); text-align: center; line-height: 300px; }
+.ui-tooltip { border: 1px solid white; background: rgba(20, 20, 20, 1); color: white; }
+.set { display: inline-block; }
+.notification { position: absolute; display: inline-block; font-size: 2em; padding: .5em; box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5); }

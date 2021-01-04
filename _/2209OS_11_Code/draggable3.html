@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Draggable</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/draggableNoCursor.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+    <script>
+	    $(document).ready(function($){
+        $("#drag").draggable({
+          cursor: "move",
+          axis: "y",
+          distance: "30",
+          cursorAt: { top: 0, left: 0 }
+        });
+      });	  	
+    </script>        
+  </head>
+  <body>
+	<div id="drag"></div>
+  </body>
+</html>	  	

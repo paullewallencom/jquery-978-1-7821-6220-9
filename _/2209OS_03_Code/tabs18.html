@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tabs</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.tabs.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#myTabs").tabs();
+      $("#fileChooser").change(function() {
+        $("#myTabs").tabs("option", "active", 2);
+        $("#myTabs").find("ul>li a").attr("href", $(this).val());
+        $("#myTabs").tabs("load", "active");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="myTabs">
+    <ul>
+      <li><a href="#a">Tab 1</a></li>
+      <li><a href="#b">Tab 2</a></li>
+      <li><a href="remoteTab1.txt">AJAX Tab</a></li>
+    </ul>
+    <div id="a">This is the content panel linked to the first tab, it is shown by default.</div>
+    <div id="b">This content is linked to the second tab and will be shown when its tab is clicked.</div>
+  </div>
+    <p>Select a tab:
+    <select id="fileChooser">
+      <option value="remoteTab1.txt">remoteTab1</option>
+      <option value="remoteTab2.txt">remoteTab2</option>
+    </select>
+</body>
+</html>

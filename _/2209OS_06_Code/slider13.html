@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Slider</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.slider.js"></script>
+  <script>
+    $(document).ready(function($){
+      $("#mySlider").slider({
+        values: [25, 75]
+      });
+      $(".preset").click(function() {
+        if (this.id === "low") {
+          $("#mySlider").slider("values", 0, 0).slider("values", 1, 25);
+        } else {
+          $("#mySlider").slider("values", 0, 75).slider("values", 1, 100);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="mySlider"></div>
+  <p>
+  <button type="button" class="preset" id="low">Preset 1 (low)</button>
+  <button type="button" class="preset" id="high">Preset 2 (high)</button>
+</body>
+</html>

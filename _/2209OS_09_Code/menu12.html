@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Context Menu</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <link rel="stylesheet" href="css/menuContext.css"> 
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.position.js"></script>
+  <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+  <script>
+  </script>
+</head>
+<body>
+  <ul id="myMenu">
+    <li class="ui-state-disabled"><a href="#">Aberdeen</a></li>
+    <li><a href="#">Ada</a></li>
+    <li><a href="#">Adamsville</a></li>
+    <li><a href="#">Addyston</a></li>
+    <li>
+      <a href="#">Delphi</a>
+      <ul>
+        <li class="ui-state-disabled"><a href="#">Ada</a></li>
+        <li><a href="#">Saarland</a></li>
+        <li><a href="#">Salzburg</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Saarland</a></li>
+    <li>
+      <a href="#">Salzburg</a>
+      <ul>
+        <li>
+          <a href="#">Delphi</a>
+          <ul>
+            <li><a href="#">Ada</a></li>
+            <li><a href="#">Saarland</a></li>
+            <li><a href="#">Salzburg</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Delphi</a>
+          <ul>
+            <li><a href="#">Ada</a></li>
+            <li><a href="#">Saarland</a></li>
+            <li><a href="#">Salzburg</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Perch</a></li>
+      </ul>
+    </li>
+    <li class="ui-state-disabled"><a href="#">Amesville</a></li>
+  </ul>
+  <div id="menuContext">
+    <img src="img/coffee.jpg"><br>
+    Right click for menu
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transfer</title>
+    <link rel="stylesheet" type="text/css" href="css/effectTransfer.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-transfer.js"></script>
+  </head>
+  <script>
+    $(document).ready(function($){
+      $("#buy").click(function() {
+        $("#productContainer img").effect("transfer", {
+          to:"#basket"
+        }, 750, function() {
+          var currentTotal = $("#total").text(),
+          numeric = parseInt(currentTotal, 10);
+          $("#total").text(numeric + 1);
+        });
+      });
+    });
+  </script>
+  <body>
+    <div id="container">
+      <div id="basketContainer">
+        <div id="basket"></div>
+        <p>Basket total: <span id="total">0</span></p>
+      </div>      
+      <div id="productContainer">
+        <img alt="GTX 280" src="img/gcard.png"></img>
+        <p>BFG GTX 280 OC 1GB GDDR3 Dual DVI HDTV Out PCI-E Graphics Card</p>
+        <p id="price">Cost: $350</p>
+        
+      </div>
+      <div id="purchase"><button id="buy">Buy</button></div>
+    </div>
+  </body>
+</html>

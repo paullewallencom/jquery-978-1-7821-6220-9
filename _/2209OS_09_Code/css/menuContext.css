@@ -1,0 +1,4 @@
+body { color: #fff; font-family: 'Doppio One', sans-serif; text-shadow: 0 1px 0 rgba(0,0,0,.3); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.ui-menu { width: 150px; }
+#myMenu { position: absolute; display: none; }
+#menuContext { color: #000; }

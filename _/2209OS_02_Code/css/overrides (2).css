@@ -1,0 +1,10 @@
+.ui-corner-all { border-radius: 4px; }
+.ui-widget-header { font-family: Helvetica; background: #251e14; 
+	border-radius:  4px 4px 0 0; border: 1px solid #362f2d; color: #c7b299; }
+.ui-form .ui-widget-header h2 { margin: 0; padding: 5px; font-style: italic; 
+	font-weight: normal; }
+.ui-form .ui-widget-content { background: #eae2d8; border: 1px solid #362f2d; 
+	border-top: 0; width:  500px; padding: 0; }
+.ui-widget-content form { padding: 20px; border: 1px solid #f3eadf; border-radius: 0 0 4px 4px; }
+.ui-widget-content .ui-state-error-text { color: #9A1B1E; }
+.ui-form .ui-state-error { border-radius:  4px 4px 4px 4px; }

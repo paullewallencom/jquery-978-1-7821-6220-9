@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sortable</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/sortableConnected.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="development-bundle/ui/jquery.ui.sortable.js"></script>
+    <script>
+	    $(document).ready(function($){
+        var getPlaces = function(e, ui) {
+          var statusMessage = function(e, ui) {
+            return "Item now at position " + (ui.item.index() + 1).toString();
+          };
+
+          var extraMessage = function (e, ui) {
+            return (e.type === "sortreceive") ? " in a new list" : "";
+          };
+
+          $("#message").remove();
+          $("<p />", {
+            id: "message",
+            text: [ statusMessage(e, ui), extraMessage(e, ui) ].join(" "),
+            css: { clear: "both" }
+          }).appendTo("body");
+        };
+        $("#sortablesA, #sortablesB").sortable({
+          connectWith: ["#sortablesA", "#sortablesB"],
+          beforeStop: getPlaces,
+          receive: getPlaces
+        });
+      });	  	
+    </script> 
+  </head>
+  <body>
+    <div id="sortablesA" class="ui-widget">
+      <div class="ui-widget-header ui-corner-all">Sortable 1A</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 2A</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 3A</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 4A</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 5A</div>
+    </div>
+      <div id="sortablesB" class="ui-widget">
+      <div class="ui-widget-header ui-corner-all">Sortable 1B</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 2B</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 3B</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 4B</div>
+      <div class="ui-widget-header ui-corner-all">Sortable 5B</div>
+    </div>
+  </body>
+</html>

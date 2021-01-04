@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Selectables Component</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <link rel="stylesheet" href="css/selectableViewer.css">
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="development-bundle/ui/jquery.ui.selectable.js"></script>
+    <script src="development-bundle/ui/jquery.ui.tabs.js"></script>
+    <script>
+	    $(document).ready(function($){
+        $("#thumbs").selectable({
+          stop: function(e, ui) {
+            $("#imageSelector").children().not("#thumbs").remove();
+            $("<div />", { id: "viewer" }).insertBefore("#thumbs");
+            if ($(".ui-selected", "#thumbs").length == 1) {
+              singleSelect();
+            } else {
+              multiSelect();
+            }
+          }
+        });
+        
+        function singleSelect() {
+          var id = $(".ui-selected", "#thumbs").attr("id");
+          $("<div />", {
+            id: "status",
+            text: id,
+            "class": "ui-widget-header ui-corner-all"
+          }).insertBefore("#viewer");
+          $("<img />", {
+            src: "img/" + id + ".jpg",
+            id: id
+          }).appendTo("#viewer");
+        }
+        
+        function multiSelect() {
+          $("<div />", { id: "tabs" }).insertBefore("#viewer");
+          var tabList = $("<ul />", { id: "tabList" }).appendTo("#tabs");
+          $(".ui-selected", "#thumbs").each(function() {
+            var id = $(this).attr("id"), tabItem = $("<li />").appendTo(tabList),
+              tabLink = $("<a />", { text: id, href: "#tabpanel_" + id }).appendTo(tabItem),
+              panel = $("<div />", { id: "tabpanel_" + id }).appendTo("#viewer");
+            $("<img />", { src: "img/" + id + ".jpg", id: id }).appendTo(panel);
+          });
+          $("#viewer").css("left", 0).appendTo("#tabs");
+          $("#tabs").tabs();
+        }
+      });	  	
+    </script> 
+  </head>
+  <body>
+    <div id="imageSelector"
+      class="ui-widget ui-corner-all ui-helper-clearfix">
+      <div id="status" class="ui-widget-header ui-corner-all">Crab</div>
+      <div id="viewer"><img src="img/crab.jpg"></div>
+      <div id="thumbs">
+        <img class="ui-selected" id="crab" src="img/crab.jpg">
+        <img class="right" id="orion" src="img/orion.jpg">
+        <img id="omega" src="img/omega.jpg">
+        <img class="right" id="egg" src="img/egg.jpg">
+        <img id="triangulum" src="img/triangulum.jpg">
+        <img class="right" id="rosette" src="img/rosette.jpg">
+        <img id="ring" src="img/ring.jpg">
+        <img class="right" id="boomerang" src="img/boomerang.jpg">
+      </div>
+    </div>
+  </body>
+</html>

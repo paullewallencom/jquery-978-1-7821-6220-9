@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shake</title>
+    <style>
+      #ball { position: relative; top: 150px; }
+    </style>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect.js"></script>
+    <script src="development-bundle/ui/jquery.ui.effect-shake.js"></script>
+  </head>
+  <script>
+    $(document).ready(function($){
+      $("#ball").click(function() {
+        $(this).effect("shake", { direction: "up" }, 100);
+      });
+    });
+  </script>
+  <body>
+    <div id="ball">
+      <img src="img/ball.png">
+    </div>
+  </body>
+</html>

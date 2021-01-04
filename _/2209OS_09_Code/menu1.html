@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+    <style>
+      .ui-menu { width: 17%;  }
+    </style>
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="development-bundle/ui/jquery.ui.menu.js"></script>
+    <script>
+	  $(document).ready(function($){
+	    $("#myMenu").menu();
+      });	  	
+    </script>        
+  </head>
+  <body>
+	<ul id="myMenu">
+	  <!-- Top level menu -->
+	  <li class="ui-state-disabled"><a href="#">London</a></li>
+	  <li><a href="#">Antwerp</a></li>
+	  <li><a href="#">Belgium</a>
+	  	<ul>
+	      <!-- Second level menu -->
+	      <li class="ui-state-disabled"><a href="#">Antwerp</a></li>
+	      <li><a href="#">Brussels</a></li>
+		  <li><a href="#">Bruges</a></li>
+	    </ul>
+	  </li>
+	  <!-- Top level menu -->
+	  <li><a href="#">Brussels</a></li>
+	  <li><a href="#">Bruges</a>
+	    <ul>
+	      <li><a href="#">Belgium</a>
+	        <ul>
+	          <!-- Third level menu -->
+	          <li><a href="#">Antwerp</a></li>
+	          <li><a href="#">Brussels</a></li>
+	          <li><a href="#">Bruges</a></li>
+	        </ul>
+	      </li>
+	      <!-- Second level menu -->
+	      <li><a href="#">Belgium</a>
+	        <ul>
+	          <!-- Third level menu -->
+	          <li><a href="#">Antwerp</a></li>
+	          <li><a href="#">Brussels</a></li>
+	          <li><a href="#">Bruges</a></li>
+	        </ul>
+	      </li>
+	      <!-- Second level menu -->
+	      <li><a href="#">Paris</a></li>
+	    </ul>
+	  </li>
+	  <!-- First level menu -->
+	  <li class="ui-state-disabled"><a href="#">Amsterdam</a></li>
+	</ul>
+  </body>
+</html>	  	

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dialog</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.position.js"></script>
+  <script src="development-bundle/ui/jquery.ui.dialog.js"></script>
+  <script src="development-bundle/ui/jquery.ui.button.js"></script>
+  <script>
+  $(document).ready(function($){
+    $("#showdialog").button();
+
+	  $("#myDialog").dialog({
+      autoOpen: false,
+      modal: true,
+    });
+
+    $("#showdialog").click(function() {
+      $("#myDialog").dialog("open");
+    });
+    $("#showdialog").position({
+      my: "left+20 top+100",
+      at: "left bottom",
+      of: myDialog
+    });
+  });
+  </script>
+</head>
+<body>
+  <div id="myDialog" title="This is the title!">
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  Aenean sollicitudin. Sed interdum pulvinar justo. Nam iaculis
+  volutpat ligula. Integer vitae felis quis diam laoreet
+  ullamcorper. Etiam tincidunt est vitae est.
+  </div>
+
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  Aenean sollicitudin. Sed interdum pulvinar justo. Nam iaculis
+  volutpat ligula. Integer vitae felis quis diam laoreet
+  ullamcorper. Etiam tincidunt est vitae est.
+  <button id="showdialog">Click me</button>
+</body>
+</html>

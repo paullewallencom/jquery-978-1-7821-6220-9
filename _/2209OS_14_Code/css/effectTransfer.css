@@ -1,0 +1,11 @@
+body { font-family: "Lucida Grande",Arial,sans-serif; }
+#container { width: 707px; margin: 0 auto; }
+#productContainer img { width:  92px; height: 60px; border: 2px solid #000000; position: relative; float: left; }
+#productContainer p { width: 340px; height: 50px; padding: 5px; border: 2px solid #000; border-left: none; margin: 0; font-family: Verdana; font-size: 11px; font-weight: bold;
+float: left; }
+p#price { height: 35px; width: 70px; padding-top: 20px; float: left; }
+#purchase { height: 44px; width: 75px; padding-top: 16px; border: 2px solid #000; border-left: none; float: left; text-align: center; }
+#basketContainer { width: 90px; margin-top: 100px; float: right; }
+#basketContainer p { width:  100px; }
+#basket { width: 65px; height: 50px; position: relative; left: 13px; background: url(img/shopping.png) no-repeat; }
+.ui-effects-transfer { border: 2px solid #66ff66; }

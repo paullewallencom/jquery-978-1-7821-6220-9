@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dialog</title>
+  <link rel="stylesheet" href="development-bundle/themes/redmond/jquery.ui.all.css">
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="development-bundle/ui/jquery.ui.core.js"></script>
+  <script src="development-bundle/ui/jquery.ui.widget.js"></script>
+  <script src="development-bundle/ui/jquery.ui.position.js"></script>
+  <script src="development-bundle/ui/jquery.ui.dialog.js"></script>
+  <script src="development-bundle/ui/jquery.ui.button.js"></script>
+  <script src="development-bundle/ui/jquery.ui.mouse.js"></script>
+  <script src="development-bundle/ui/jquery.ui.draggable.js"></script>
+  <script src="development-bundle/ui/jquery.ui.resizable.js"></script>
+  <script>
+    $(document).ready(function($){  
+      $("#dialog1").dialog({
+        open: function() {
+          $("#status").children(":last").text("The dialog is open");
+        },
+        close: function() {
+          $("#status").children(":last").text("The dialog is closed");
+        },
+        beforeClose: function(event, ui) {
+          if ($(".ui-dialog").css("width") > "300") {
+            return false;
+          }
+        }
+      });
+    });      
+  </script>
+</head>
+<body>
+  <div id="dialog1" title="Dialog 1">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aenean sollicitudin. Sed interdum pulvinar justo. Nam aculis
+    volutpat ligula. Integer vitae felis quis diam laoreet
+    ullamcorper. Etiam tincidunt est vitae est.
+  </div>
+  <div id="status" class="ui-widget ui-dialog ui-corner-all ui-widget-content">
+    <div class="ui-widget-header ui-dialog-titlebar ui-corner-all">Dialog Status</div>
+    <div class="ui-widget-content ui-dialog-content"></div>
+  </div>
+</body>
+</html>
+
